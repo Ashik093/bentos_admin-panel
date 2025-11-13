@@ -11,7 +11,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Project extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','description','extra_description','image'];
+    protected $fillable = ['title','description','extra_description','image','year','client','service','project','category_id'];
+
     protected function image(): Attribute
     {
         return Attribute::make(
@@ -19,5 +20,10 @@ class Project extends Model
         );
     }
 
-    
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+
 }

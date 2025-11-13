@@ -34,11 +34,7 @@
 			    <table id="example1" class="table table-bordered table-striped">
 			      <thead>
 			      <tr>
-			        <th>Title</th>
 			        <th>Project</th>
-			        <th>Position</th>
-			        <th>Description</th>
-			        <th>More Description</th>
 			        <th>Images</th>
 			        <th>Action</th>
 			       
@@ -48,11 +44,7 @@
 			      <tbody>
 					@foreach($data as $row)
 						<tr>
-							<td>{{$row->title}}</td>
 							<td>{{$row->project->title}}</td>
-							<td>{{$row->is_left? "Left":"Right"}}</td>
-							<td>{{$row->description}}</td>
-							<td>{{$row->extra_description}}</td>
 							
 							<td>
 								<img width="100" style="margin-right:3px;" src="{{URL::to($row->image)}}" alt="">	

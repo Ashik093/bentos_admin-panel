@@ -5,7 +5,7 @@
 	  <div class="container-fluid">
 	    <div class="row mb-2">
 	      <div class="col-sm-6">
-	        
+
 	      </div><!-- /.col -->
 	      <div class="col-sm-6">
 	        <ol class="breadcrumb float-sm-right">
@@ -26,8 +26,8 @@
 			  <div class="card-header">
 			    <h3 class="card-title">Project</h3>
 				<a href="{{route('project.create')}}" class="btn btn-sm btn-success float-right" >Create Project</a>
-			    
-                
+
+
 			  </div>
 			  <!-- /.card-header -->
 			  <div class="card-body">
@@ -36,30 +36,40 @@
 			      <tr>
 			        <th>Title</th>
 			        <th>Description</th>
-			        <th>More Description</th>
+			        <th>Year</th>
+			        <th>Client</th>
+			        <th>Service</th>
+			        <th>Category</th>
 			        <th>Images</th>
 			        <th>Action</th>
-			       
-			        
+
+
 			      </tr>
 			      </thead>
 			      <tbody>
 					@foreach($data as $row)
 						<tr>
 							<td>{{$row->title}}</td>
-							<td>{{$row->description}}</td>
-							<td>{{$row->extra_description}}</td>
-							
 							<td>
-								<img width="100" style="margin-right:3px;" src="{{URL::to($row->image)}}" alt="">	
+								<span title="{{ $row->description }}">
+									{{ Str::limit($row->description, 50) }}
+								</span>
+							</td>
+							<td>{{$row->year ?? 'N/A'}}</td>
+							<td>{{$row->client ?? 'N/A'}}</td>
+							<td>{{$row->service ?? 'N/A'}}</td>
+							<td>{{$row->category->name ?? 'N/A'}}</td>
+
+							<td>
+								<img width="100" style="margin-right:3px;" src="{{URL::to($row->image)}}" alt="">
 							</td>
 							<td><div class="btn-group">
-								<a href="{{route('project.edit',$row->id)}}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a><a href="{{route('project.delete',$row->id)}}" class="btn btn-sm btn-danger" id="delete"><i class="fa fa-trash"></i></a>	
+								<a href="{{route('project.edit',$row->id)}}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a><a href="{{route('project.delete',$row->id)}}" class="btn btn-sm btn-danger" id="delete"><i class="fa fa-trash"></i></a>
 							</div></td>
 						</tr>
 					@endforeach
 			      </tbody>
-			      
+
 			    </table>
 			  </div>
 			  <!-- /.card-body -->

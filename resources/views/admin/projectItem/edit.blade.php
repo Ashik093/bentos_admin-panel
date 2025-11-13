@@ -50,42 +50,10 @@
 											@error('image')
 												<div class="alert alert-danger">{{ $message }}</div>
 											@enderror
-											<div class="form-group">
-												<label>Select A Possition</label>
-												<select class="form-control @error('is_left') is-invalid @enderror" id="is_left" name="is_left">
-													<option disabled selected>Select One</option>
-													
-														<option @if($data->is_left==1) selected @endif value="1">Left</option>
-														<option @if($data->is_left==0) selected @endif value="0">Right</option>
-													
-													
-													</select>
-												
-											</div>
-											@error('is_left')
-												   <div class="alert alert-danger">{{ $message }}</div>
-											   @enderror
-											<div class="form-group">
-												<label>Description</label>
-												<textarea  name="description" id="description" class="form-control @error('description') is-invalid @enderror">{{$data->description}}</textarea>
-											</div>
-												@error('description')
-												   <div class="alert alert-danger">{{ $message }}</div>
-											   @enderror
 											
-											   
-										   
-			               	 			 
-			  							
 			  						</div>
 			  						<div class="col-md-6">
-										<div class="form-group">
-											<label>Project Title</label>
-											<input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" value="{{$data->title}}" required>
-										</div>
-										@error('title')
-											   <div class="alert alert-danger">{{ $message }}</div>
-										   @enderror
+										
 										   <div class="form-group">
 											<label>Select A Project</label>
 											<select class="form-control @error('project_id') is-invalid @enderror" id="project_id" name="project_id">
@@ -100,15 +68,7 @@
 										@error('project_id')
 											   <div class="alert alert-danger">{{ $message }}</div>
 										   @enderror
-										   <div class="form-group">
-                                            <label>Extra Description</label>
-                                            <textarea  name="extra_description" id="extra_description" class="form-control @error('extra_description') is-invalid @enderror">{{$data->extra_description}}</textarea>
-                                        </div>
-                                        	@error('extra_description')
-                                               <div class="alert alert-danger">{{ $message }}</div>
-                                           @enderror
-                                        
-										   
+										  
 			  						</div>
 									  <div class="col-md-12">
 										<button type="submit" class="btn btn-info">Save</button>

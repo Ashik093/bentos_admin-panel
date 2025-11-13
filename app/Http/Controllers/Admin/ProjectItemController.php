@@ -27,19 +27,11 @@ class ProjectItemController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
             'image' => 'required',
-            'project_id' => 'required',
-            'is_left' => 'required',
+            'project_id' => 'required'
         ]);
         $data = new ProjectItem();
         $data->project_id = $request->project_id;
-        $data->is_left = $request->is_left;
-        $data->title = $request->title;
-        $data->description = $request->description;
-        $data->extra_description = $request->extra_description;
-        
         $image = $request->image;
     
         if ($image) {
@@ -74,19 +66,11 @@ class ProjectItemController extends Controller
     public function update(Request $request,$id)
     {
         $validated = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
             'project_id' => 'required',
-            'is_left' => 'required',
         ]);
     	
         $data = ProjectItem::find($id);
         $data->project_id = $request->project_id;
-        $data->is_left = $request->is_left;
-        $data->title = $request->title;
-        $data->description = $request->description;
-        $data->extra_description = $request->extra_description;
-        
         $image = $request->image;
     
         if ($image) {

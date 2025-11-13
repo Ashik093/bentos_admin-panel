@@ -28,22 +28,32 @@ class ProjectController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required'
+            'image' => 'required',
+            'year' => 'nullable|integer|min:1900|max:' . (date('Y') + 10),
+            'client' => 'nullable|string|max:255',
+            'service' => 'nullable|string|max:255',
+            'project' => 'nullable|string|max:255',
+            'category_id' => 'nullable|exists:categories,id'
         ]);
         $data = new Project();
         $data->title = $request->title;
         $data->description = $request->description;
         $data->extra_description = $request->extra_description;
-        
+        $data->year = $request->year;
+        $data->client = $request->client;
+        $data->service = $request->service;
+        $data->project = $request->project;
+        $data->category_id = $request->category_id;
+
         $image = $request->image;
-    
+
         if ($image) {
         	$imageName = date('dm').uniqid().'1.'.$image->getClientOriginalExtension();
         	Image::make($image)->save(public_path("/uploads/project/".$imageName),40);
         	$data->image = "uploads/project/".$imageName;
         }
-        
-        
+
+
         if ($data->save()) {
     		$notification = array(
     			'messege'=>'Project Saved',
@@ -62,7 +72,7 @@ class ProjectController extends Controller
     }
     public function edit($id)
     {
-        
+
         $data = Project::find($id);
         return view('admin.project.edit',compact('data'));
     }
@@ -70,22 +80,32 @@ class ProjectController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'year' => 'nullable|integer|min:1900|max:' . (date('Y') + 10),
+            'client' => 'nullable|string|max:255',
+            'service' => 'nullable|string|max:255',
+            'project' => 'nullable|string|max:255',
+            'category_id' => 'nullable|exists:categories,id'
         ]);
-    	
+
         $data = Project::find($id);
         $data->title = $request->title;
         $data->description = $request->description;
         $data->extra_description = $request->extra_description;
-        
+        $data->year = $request->year;
+        $data->client = $request->client;
+        $data->service = $request->service;
+        $data->project = $request->project;
+        $data->category_id = $request->category_id;
+
         $image = $request->image;
-    
+
         if ($image) {
         	$imageName = date('dm').uniqid().'1.'.$image->getClientOriginalExtension();
         	Image::make($image)->save(public_path("/uploads/project/".$imageName),40);
         	$data->image = "uploads/project/".$imageName;
         }
-        
+
         if ($data->save()) {
     		$notification = array(
     			'messege'=>'Project Updated',
@@ -110,7 +130,7 @@ class ProjectController extends Controller
                 'messege'=>'Product can not be deleted, because project has item item exist',
                 'type'=>'success'
             );
-    
+
                 return Redirect()->back()->with($notification);
         }
         $data = Project::find($id);
@@ -119,16 +139,16 @@ class ProjectController extends Controller
                 'messege'=>'Project Deleted',
                 'type'=>'success'
             );
-    
+
                 return Redirect()->back()->with($notification);
         }else{
             $notification = array(
                 'messege'=>'Unsuccessful',
                 'type'=>'error'
             );
-    
+
             return Redirect()->back()->with($notification);
         }
-        
+
     }
 }

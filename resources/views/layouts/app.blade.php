@@ -187,7 +187,54 @@
               </p>
             </a>
           </li>
-  
+
+          <li class="nav-item has-treeview">
+            <a href="{{ route('experience.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-briefcase"></i>
+              <p>
+                Experience
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="{{ route('education.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-graduation-cap"></i>
+              <p>
+                Education
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="{{ route('testimonial.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-comments"></i>
+              <p>
+                Testimonials
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+  <li class="nav-item has-treeview">
+            <a href="{{ route('service.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-comments"></i>
+              <p>
+                Service
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+           <li class="nav-item has-treeview">
+            <a href="{{ route('plan.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-comments"></i>
+              <p>
+                Pricing Plan
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview">
             <a href="{{ route('setting.index') }}" class="nav-link">
               

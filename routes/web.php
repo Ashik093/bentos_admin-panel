@@ -9,6 +9,11 @@ use App\Http\Controllers\Admin\SocialLinkController;
 use App\Http\Controllers\Admin\ProjectItemController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Admin\ExperienceController;
+use App\Http\Controllers\Admin\EducationController;
+use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\PlanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,11 +91,53 @@ Route::get('/company/{id}',[CompanyController::class,'edit'])->name('company.edi
 Route::post('/company/{id}',[CompanyController::class,'update'])->name('company.update');
 Route::get('/company/delete/{id}',[CompanyController::class,'delete'])->name('company.delete');
 
+// experience routes
+Route::get('/experience',[ExperienceController::class,'index'])->name('experience.index');
+Route::get('/experience/create',[ExperienceController::class,'create'])->name('experience.create');
+Route::post('/experience/store',[ExperienceController::class,'store'])->name('experience.store');
+Route::get('/experience/{id}',[ExperienceController::class,'edit'])->name('experience.edit');
+Route::post('/experience/{id}',[ExperienceController::class,'update'])->name('experience.update');
+Route::get('/experience/delete/{id}',[ExperienceController::class,'delete'])->name('experience.delete');
+
+// education routes
+Route::get('/education',[EducationController::class,'index'])->name('education.index');
+Route::get('/education/create',[EducationController::class,'create'])->name('education.create');
+Route::post('/education/store',[EducationController::class,'store'])->name('education.store');
+Route::get('/education/{id}',[EducationController::class,'edit'])->name('education.edit');
+Route::post('/education/{id}',[EducationController::class,'update'])->name('education.update');
+Route::get('/education/delete/{id}',[EducationController::class,'delete'])->name('education.delete');
+
+// testimonial routes
+Route::get('/testimonial',[TestimonialController::class,'index'])->name('testimonial.index');
+Route::get('/testimonial/create',[TestimonialController::class,'create'])->name('testimonial.create');
+Route::post('/testimonial/store',[TestimonialController::class,'store'])->name('testimonial.store');
+Route::get('/testimonial/{id}',[TestimonialController::class,'edit'])->name('testimonial.edit');
+Route::post('/testimonial/{id}',[TestimonialController::class,'update'])->name('testimonial.update');
+Route::get('/testimonial/delete/{id}',[TestimonialController::class,'delete'])->name('testimonial.delete');
+
 Route::get('/projectitem/create',[ProjectItemController::class,'create'])->name('projectitem.create');
 Route::post('/projectitem/store',[ProjectItemController::class,'store'])->name('projectitem.store');
 Route::get('/projectitem/{id}',[ProjectItemController::class,'edit'])->name('projectitem.edit');
 Route::post('/projectitem/{id}',[ProjectItemController::class,'update'])->name('projectitem.update');
 Route::get('/projectitem/delete/{id}',[ProjectItemController::class,'delete'])->name('projectitem.delete');
+
+// service routes
+Route::get('/service',[ServiceController::class,'index'])->name('service.index');
+Route::get('/service/create',[ServiceController::class,'create'])->name('service.create');
+Route::post('/service/store',[ServiceController::class,'store'])->name('service.store');
+Route::get('/service/{id}',[ServiceController::class,'edit'])->name('service.edit');
+Route::post('/service/{id}',[ServiceController::class,'update'])->name('service.update');
+Route::get('/service/delete/{id}',[ServiceController::class,'delete'])->name('service.delete');
+
+// plan routes
+Route::get('/plan',[PlanController::class,'index'])->name('plan.index');
+Route::get('/plan/create',[PlanController::class,'create'])->name('plan.create');
+Route::post('/plan/store',[PlanController::class,'store'])->name('plan.store');
+Route::get('/plan/{id}',[PlanController::class,'edit'])->name('plan.edit');
+Route::post('/plan/{id}',[PlanController::class,'update'])->name('plan.update');
+Route::get('/plan/delete/{id}',[PlanController::class,'delete'])->name('plan.delete');
+
+
 
 
 

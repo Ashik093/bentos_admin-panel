@@ -16,10 +16,6 @@ return new class extends Migration
         Schema::create('project_items', function (Blueprint $table) {
             $table->id();
             $table->integer('project_id');
-            $table->boolean('is_left');
-            $table->string('title');
-            $table->text('description');
-            $table->text('extra_description');
             $table->string('image');
             $table->timestamps();
         });

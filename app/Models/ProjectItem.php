@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class ProjectItem extends Model
 {
     use HasFactory;
-    protected $fillable = ['project_id','is_left','title','description','extra_description','image'];
+    protected $fillable = ['project_id','image'];
     protected function image(): Attribute
     {
         return Attribute::make(
