@@ -9,7 +9,7 @@ class EducationController extends Controller
 {
     public function index()
     {
-        $educations = Education::all();
+        $educations = Education::orderBy('id','desc')->get();
         return response()->json($educations);
     }
 

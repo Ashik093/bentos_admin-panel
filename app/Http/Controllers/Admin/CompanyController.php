@@ -45,7 +45,7 @@ class CompanyController extends Controller
                 File::makeDirectory($destinationPath, 0755, true);
             }
             // resize to reasonable dimensions
-            Image::make($logo)->fit(300, 300, function ($constraint) {
+            Image::make($logo)->fit(110, 32, function ($constraint) {
                 $constraint->upsize();
             })->save($destinationPath . DIRECTORY_SEPARATOR . $logoName, 80);
             $company->logo = 'uploads/company_logos/' . $logoName;
@@ -94,7 +94,7 @@ class CompanyController extends Controller
             if (!File::exists($destinationPath)) {
                 File::makeDirectory($destinationPath, 0755, true);
             }
-            Image::make($logo)->fit(300, 300, function ($constraint) {
+            Image::make($logo)->fit(110, 32, function ($constraint) {
                 $constraint->upsize();
             })->save($destinationPath . DIRECTORY_SEPARATOR . $logoName, 80);
             $company->logo = 'uploads/company_logos/' . $logoName;

@@ -9,7 +9,7 @@ class ExperienceController extends Controller
 {
     public function index()
     {
-        $experiences = Experience::all();
+        $experiences = Experience::orderBy('id','desc')->get();
         return response()->json($experiences);
     }
 

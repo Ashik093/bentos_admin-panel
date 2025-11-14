@@ -55,7 +55,7 @@ class TestimonialController extends Controller
             if (!File::exists($destinationPath)) {
                 File::makeDirectory($destinationPath, 0755, true);
             }
-            Image::make($image)->fit(300, 300, function ($constraint) {
+            Image::make($image)->fit(90, 90, function ($constraint) {
                 $constraint->upsize();
             })->save($destinationPath . DIRECTORY_SEPARATOR . $imageName);
             $testimonial->photo = 'uploads/testimonial_photos/' . $imageName;
@@ -112,7 +112,7 @@ class TestimonialController extends Controller
             if (!File::exists($destinationPath)) {
                 File::makeDirectory($destinationPath, 0755, true);
             }
-            Image::make($image)->fit(300, 300, function ($constraint) {
+            Image::make($image)->fit(90, 90, function ($constraint) {
                 $constraint->upsize();
             })->save($destinationPath . DIRECTORY_SEPARATOR . $imageName);
             $testimonial->photo = 'uploads/testimonial_photos/' . $imageName;

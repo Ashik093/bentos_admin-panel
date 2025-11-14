@@ -65,7 +65,7 @@ class ProfileController extends Controller
             if (!File::exists($destinationPath)) {
                 File::makeDirectory($destinationPath, 0755, true);
             }
-            Image::make($image)->fit(400, 400, function ($constraint) {
+            Image::make($image)->fit(732, 979, function ($constraint) {
                 $constraint->upsize();
             })->save($destinationPath . DIRECTORY_SEPARATOR . $imageName, 80);
             $profile->profile_photo = 'uploads/profile_photos/' . $imageName;
@@ -146,7 +146,7 @@ class ProfileController extends Controller
             if (!File::exists($destinationPath)) {
                 File::makeDirectory($destinationPath, 0755, true);
             }
-            Image::make($image)->fit(400, 400, function ($constraint) {
+            Image::make($image)->fit(732, 979, function ($constraint) {
                 $constraint->upsize();
             })->save($destinationPath . DIRECTORY_SEPARATOR . $imageName, 80);
             $profile->profile_photo = 'uploads/profile_photos/' . $imageName;

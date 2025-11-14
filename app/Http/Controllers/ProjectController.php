@@ -10,9 +10,12 @@ class ProjectController extends Controller
 {
     public function project()
     {
-        return Project::get();
+        return Project::with('category')->get();
     }
-
+public function projectByCategory($id)
+    {
+        return Project::where('category_id',$id)->with('category')->get();
+    }
     public function projectItem($id)
     {
         return ['data'=>ProjectItem::where('project_id',$id)->get(),'project'=>Project::find($id)];

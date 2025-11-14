@@ -17,6 +17,7 @@ use App\Http\Controllers\TestimonialController;
 
 Route::get('/category',[CategoryController::class,'index']);
 Route::get('/project',[ProjectController::class,'project']);
+Route::get('/projectByCategory/{id}',[ProjectController::class,'projectByCategory']);
 Route::get('/projectitem/{id}',[ProjectController::class,'projectItem']);
 Route::get('/header',[HeaderController::class,'header']);
 Route::get('/getInTouch',[HeaderController::class,'getInTouch']);
