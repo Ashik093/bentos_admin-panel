@@ -1,10 +1,10 @@
-# TODO: Complete PlanController and Views
+# TODO: Create Public GET APIs for Profile, Company, Plan, Service, Education, Experience, Testimonial
 
-- [x] Update PlanController to use Plan model instead of Service
-- [x] Change view names from admin.service.* to admin.plan.*
-- [x] Update validation rules to match Plan fields (name, subtitle, price, per, features, is_popular, button_label)
-- [x] Create resources/views/admin/plan/ directory
-- [x] Create resources/views/admin/plan/index.blade.php
-- [x] Create resources/views/admin/plan/create.blade.php
-- [x] Create resources/views/admin/plan/edit.blade.php
-- [x] Add plan routes to routes/web.php
+- [x] Create ProfileController with index and show methods
+- [x] Create CompanyController with index and show methods
+- [x] Create PlanController with index and show methods
+- [x] Create ServiceController with index and show methods
+- [x] Create EducationController with index and show methods
+- [x] Create ExperienceController with index and show methods
+- [x] Create TestimonialController with index and show methods
+- [x] Update routes/api.php to add GET routes for all controllers
