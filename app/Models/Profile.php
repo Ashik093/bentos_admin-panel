@@ -31,4 +31,10 @@ class Profile extends Model
             get: fn (string $value) => URL::to($value),
         );
     }
+    protected function cvFile(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => URL::to($value),
+        );
+    }
 }

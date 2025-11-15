@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Setting extends Model
 {
     use HasFactory;
-    protected $fillable =['logo','emailbg','phone','title','email','favicon','meta_description'];
+    protected $fillable =['logo','emailbg','phone','title','email','favicon','meta_description','office'];
     protected function logo(): Attribute
     {
         return Attribute::make(

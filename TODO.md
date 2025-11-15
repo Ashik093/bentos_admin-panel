@@ -1,10 +1,7 @@
-# TODO: Create Public GET APIs for Profile, Company, Plan, Service, Education, Experience, Testimonial
+# TODO for Contact Us Model and Table Implementation
 
-- [x] Create ProfileController with index and show methods
-- [x] Create CompanyController with index and show methods
-- [x] Create PlanController with index and show methods
-- [x] Create ServiceController with index and show methods
-- [x] Create EducationController with index and show methods
-- [x] Create ExperienceController with index and show methods
-- [x] Create TestimonialController with index and show methods
-- [x] Update routes/api.php to add GET routes for all controllers
+- [x] Create migration file for contact_us table with columns: id, name (string), emailPhone (string), description (text), timestamps
+- [x] Create ContactUs model in app/Models with fillable fields: name, emailPhone, description
+- [x] Modify ContactUsController to create a new ContactUs record instead of sending email
+- [x] Run php artisan migrate to create the table
+- [ ] Test the /contact/us/mail endpoint to ensure data is stored correctly

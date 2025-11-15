@@ -32,6 +32,7 @@ class SettingController extends Controller
         $data->title = $request->title;
         $data->phone = $request->phone;
         $data->email = $request->email;
+        $data->office = $request->office;
         $data->meta_description = $request->meta_description;
         $image = $request->logo;
         $imageBg = $request->emailbg;

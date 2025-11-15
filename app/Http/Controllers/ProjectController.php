@@ -18,6 +18,6 @@ public function projectByCategory($id)
     }
     public function projectItem($id)
     {
-        return ['data'=>ProjectItem::where('project_id',$id)->get(),'project'=>Project::find($id)];
+        return ['data'=>ProjectItem::where('project_id',$id)->get(),'project'=>Project::with('category')->find($id)];
     }
 }

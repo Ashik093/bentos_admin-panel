@@ -235,6 +235,15 @@
               </p>
             </a>
           </li>
+           <li class="nav-item has-treeview">
+            <a href="{{ route('contact.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-comments"></i>
+              <p>
+                Contact US
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview">
             <a href="{{ route('setting.index') }}" class="nav-link">
               

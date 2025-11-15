@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ContactUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SettingController;
@@ -137,6 +138,7 @@ Route::get('/plan/{id}',[PlanController::class,'edit'])->name('plan.edit');
 Route::post('/plan/{id}',[PlanController::class,'update'])->name('plan.update');
 Route::get('/plan/delete/{id}',[PlanController::class,'delete'])->name('plan.delete');
 
+Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact.index');
 
 
 

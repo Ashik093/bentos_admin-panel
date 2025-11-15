@@ -58,39 +58,20 @@
 												@error('email')
 													   <div class="alert alert-danger">{{ $message }}</div>
 												   @enderror
-												   @if(auth()->user()->is_super_admin)
-													<div class="form-group">
-														<label>Meta Description</label>
-														<input type="text" name="meta_description" id="meta_description" class="form-control @error('meta_description') is-invalid @enderror" value="{{$data->meta_description}}" required>
-													</div>
-													@error('meta_description')
-														<div class="alert alert-danger">{{ $message }}</div>
-													@enderror
-
-													@else
-													<input type="hidden" name="meta_description" id="meta_description" class="form-control @error('meta_description') is-invalid @enderror" value="{{$data->meta_description}}">
-												   @endif
+												   										   										   <div class="form-group">
+                                            <label>Office</label>
+                                            <input type="text" name="office" id="office" class="form-control @error('title') is-invalid @enderror" value="{{$data->office}}" required>
+                                        </div>
+                                        	@error('office')
+                                               <div class="alert alert-danger">{{ $message }}</div>
+                                           @enderror
+												  
 												   
 			               	 			 
 			  							
 			  						</div>
 			  						<div class="col-md-6">
-                                        @if(auth()->user()->is_super_admin)
-										<div class="form-group">
-												
-											<label for="exampleInputFile">Email Background Image</label>
-											<div class="input-group">
-												<img src="{{URL::to($data->emailbg)}}" alt="" id="image_one" style="width: 40px;height: 40px;">
-												<div class="custom-file">
-													<input type="file"  accept="image/*" name="emailbg"  class="custom-file-input" id="exampleInputFile" onchange="readURLOne(this);" >
-													<label class="custom-file-label" for="exampleInputFile">Choose file</label>
-												</div>
-											</div>
-										</div>
-										@error('emailbg')
-											<div class="alert alert-danger">{{ $message }}</div>
-										@enderror
-										@endif
+
 										<div class="form-group">
                                             <label>Phone</label>
                                             <input type="text" name="phone" id="phone" class="form-control @error('title') is-invalid @enderror" value="{{$data->phone}}" required>
@@ -98,6 +79,7 @@
                                         	@error('phone')
                                                <div class="alert alert-danger">{{ $message }}</div>
                                            @enderror
+										   
 										   <div class="form-group">
                                             <label>Site Title</label>
                                             <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" value="{{$data->title}}" required>
@@ -105,6 +87,7 @@
                                         	@error('title')
                                                <div class="alert alert-danger">{{ $message }}</div>
                                            @enderror
+
 										
 			  						</div>
 									  <div class="col-md-12">

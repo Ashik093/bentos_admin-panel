@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('favicon')->nullable();
             $table->string('meta_description')->nullable();
+            $table->string('office')->nullable();
             $table->timestamps();
         });
     }
