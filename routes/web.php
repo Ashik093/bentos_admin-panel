@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\EducationController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\PlanController;
+use App\Http\Controllers\Admin\NewsLinkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -139,6 +140,14 @@ Route::post('/plan/{id}',[PlanController::class,'update'])->name('plan.update');
 Route::get('/plan/delete/{id}',[PlanController::class,'delete'])->name('plan.delete');
 
 Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact.index');
+
+// newslink routes
+Route::get('/newslink',[NewsLinkController::class,'index'])->name('newslink.index');
+Route::get('/newslink/create',[NewsLinkController::class,'create'])->name('newslink.create');
+Route::post('/newslink/store',[NewsLinkController::class,'store'])->name('newslink.store');
+Route::get('/newslink/{id}',[NewsLinkController::class,'edit'])->name('newslink.edit');
+Route::post('/newslink/{id}',[NewsLinkController::class,'update'])->name('newslink.update');
+Route::get('/newslink/delete/{id}',[NewsLinkController::class,'delete'])->name('newslink.delete');
 
 
 

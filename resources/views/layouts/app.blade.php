@@ -92,8 +92,8 @@
         $setting = \App\Models\Setting::first();    
       @endphp
     <a href="{{ route('home') }}" class="brand-link">
-      <img src="{{URL::to($setting->logo)}}" alt=" Logo" class="brand-image rounded elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Tiles Corner</span>
+      <img src="{{URL::to(path: $setting->logo)}}" alt=" Logo" class="brand-image rounded elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">{{ $setting->title }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -240,6 +240,15 @@
               <i class="nav-icon fas fa-comments"></i>
               <p>
                 Contact US
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+                     <li class="nav-item has-treeview">
+            <a href="{{ route('newslink.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-comments"></i>
+              <p>
+                NewsLink
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>

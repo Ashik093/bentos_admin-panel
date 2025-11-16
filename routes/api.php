@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsLinkController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HeaderController;
@@ -38,3 +39,4 @@ Route::get('/experience',[ExperienceController::class,'index']);
 Route::get('/experience/{id}',[ExperienceController::class,'show']);
 Route::get('/testimonial',[TestimonialController::class,'index']);
 Route::get('/testimonial/{id}',[TestimonialController::class,'show']);
+Route::get('/newslink',[NewsLinkController::class,'index']);
