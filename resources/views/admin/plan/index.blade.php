@@ -47,7 +47,7 @@
 										<td>{{ $key + 1 }}</td>
 										<td>{{ $row->name }}</td>
 										<td>{{ $row->subtitle ?? 'N/A' }}</td>
-										<td>${{ $row->price }}</td>
+										<td>{{ $row->currency_symbol }}{{ $row->price }}</td>
 										<td>{{ $row->per ?? 'N/A' }}</td>
 										<td>
 											{{ $row->features }}

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->json('features')->nullable(); // store features as JSON array
             $table->boolean('is_popular')->default(false); // highlight a plan
             $table->string('button_label')->nullable(); // e.g. "Order Now"
+            $table->string('currency_symbol')->nullable(); // e.g. "https://example.com/order"
             $table->timestamps();
         });
     }

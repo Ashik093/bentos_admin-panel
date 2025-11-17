@@ -16,6 +16,7 @@ class Plan extends Model
         'features',
         'is_popular',
         'button_label',
+        'currency_symbol'
     ];
 
 

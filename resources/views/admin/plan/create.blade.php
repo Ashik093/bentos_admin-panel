@@ -44,7 +44,13 @@
 										<div class="invalid-feedback d-block">{{ $message }}</div>
 									@enderror
 								</div>
-
+							<div class="form-group">
+									<label for="currency_symbol">Currency Symbol <span class="text-danger">*</span></label>
+									<input type="text" name="currency_symbol" id="currency_symbol" class="form-control @error('currency_symbol') is-invalid @enderror" value="{{ old('currency_symbol') }}" placeholder="e.g., $" required>
+									@error('currency_symbol')
+										<div class="invalid-feedback d-block">{{ $message }}</div>
+									@enderror
+								</div>
 								<div class="form-group">
 									<label for="price">Price <span class="text-danger">*</span></label>
 									<input type="number" step="0.01" name="price" id="price" class="form-control @error('price') is-invalid @enderror" value="{{ old('price') }}" placeholder="e.g., 99.99" required>
